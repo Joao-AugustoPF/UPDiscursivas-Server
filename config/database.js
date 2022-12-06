@@ -1,3 +1,4 @@
+//database
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
