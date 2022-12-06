@@ -1,7 +1,3 @@
-const localrproduction = process.env.NODE_ENV === 'production' ? 'production' : 'localhost'
-
-
-
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
