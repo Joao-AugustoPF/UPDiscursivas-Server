@@ -1,15 +1,16 @@
 //a
 module.exports = ({ env }) => ({
-  host: env('HOST', process.env.PRODUCTION_HOST),
-  port: env(process.env.PORT),
-  url: env(process.env.PRODUCTION_HOST),
   proxy: true,
+  host: "0.0.0.0",
+  port: process.env.PORT,
+  url: env('MY_HEROKU_URL'),
   app: {
-    keys: env.array('APP_KEYS', ['Y31WH3XkmBZ7I+bovzf/Eg==','dJJrPcPKttTWqejnpJ6ZOg==','xmtSos6JhJSfk/prC5MwuA==','3DzGG5wmjI2cDjac/0WcUw==']),
+    keys: env.array('APP_KEYS')
   },
   admin: {
     auth: {
-      secret: env(process.env.JWT_SECRET),
+      secret: env('ADMIN_JWT_SECRET'),
     },
   },
-});
+})
+
