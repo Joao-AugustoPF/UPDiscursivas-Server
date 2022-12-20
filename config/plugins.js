@@ -14,5 +14,18 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  upload: {
+    config: {
+      provider: 'aws-s3', // For community providers pass the full package name (e.g. provider: 'strapi-provider-upload-google-cloud-storage')
+      providerOptions: {
+        accessKeyId: env(process.env.ACCESS_AWS),
+        secretAccessKey: env(process.env.ACCESS_AWS_SECRET),
+        region: env(process.env.AWS_REGION),
+        params: {
+          Bucket: env(process.env.AWS_BUCKET),
+        },
+      },
+    },
+  },
   // ...
 });
