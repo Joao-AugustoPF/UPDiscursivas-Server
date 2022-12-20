@@ -22,7 +22,7 @@ module.exports = ({ env }) => ({
         secretAccessKey: env(process.env.ACCESS_AWS_SECRET),
         region: env(process.env.AWS_REGION),
         params: {
-          Bucket: env(process.env.AWS_BUCKET),
+          Bucket: env('updiscursivas'),
         },
       },
     },
